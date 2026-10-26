@@ -49,6 +49,9 @@ app.use('/api/notifications', notificationsRoutes)
 app.use('/api/admin', adminRoutes)
 app.use('/api/assistant', assistantRoutes)
 
+// Serve static item images from /images folder
+app.use('/images', express.static(path.join(__dirname, '../images')))
+
 // Serve Frontend Static Files
 app.use(express.static(distPath))
 
