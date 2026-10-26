@@ -1,0 +1,410 @@
+/* src/pages/HomePage.css */
+
+/* ---- Hero Section ---- */
+.hero {
+  padding: clamp(28px, 4.5vw, 52px) 0 32px;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-primary-tint);
+  border: 1px solid #c8dcc8;
+  border-radius: var(--radius-full);
+  padding: 5px 14px;
+  margin-bottom: 18px;
+}
+
+.hero-headline {
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--color-text);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+
+.hero-headline em {
+  font-style: normal;
+  color: var(--color-primary);
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  color: var(--color-text-secondary);
+  max-width: 580px;
+  margin: 0 auto 28px;
+  line-height: 1.55;
+}
+
+/* ---- Lost & Found Action Cards (Full-screen & Responsive) ---- */
+.lost-found-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+  width: 100%;
+  margin: 32px 0 24px;
+  align-items: stretch;
+}
+
+.lf-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 170px;
+  border-radius: clamp(16px, 2.2vw, 22px);
+  padding: clamp(18px, 2.8vw, 28px);
+  gap: clamp(14px, 2.4vw, 24px);
+  cursor: pointer;
+  text-align: left;
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s ease,
+              border-color 0.22s ease;
+}
+
+.lf-card:hover {
+  transform: translateY(-3px);
+}
+
+.lf-card:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.lf-card:active {
+  transform: translateY(-1px);
+}
+
+/* Lost Card (Blush / Peach Theme) */
+.lf-card-lost {
+  background: linear-gradient(135deg, #fff7f5 0%, #feede9 100%);
+  border: 1.5px solid #f9ded7;
+}
+
+.lf-card-lost:hover {
+  border-color: #f2b7a9;
+  box-shadow: 0 12px 30px rgba(224, 107, 77, 0.12), var(--shadow-sm);
+}
+
+/* Found Card (Warm Cream / Ivory Theme) */
+.lf-card-found {
+  background: linear-gradient(135deg, #fffef6 0%, #fdf8e6 100%);
+  border: 1.5px solid #f3ebd0;
+}
+
+.lf-card-found:hover {
+  border-color: #e2d4a8;
+  box-shadow: 0 12px 30px rgba(180, 160, 80, 0.12), var(--shadow-sm);
+}
+
+/* Illustration container */
+.lf-card-illustration {
+  width: clamp(96px, 17vw, 150px);
+  height: clamp(96px, 17vw, 150px);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-illustration-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.04));
+  transition: transform 0.25s ease;
+}
+
+.lf-card:hover .lf-illustration-svg {
+  transform: scale(1.03);
+}
+
+/* Card Body & Content */
+.lf-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 110px;
+  gap: 14px;
+}
+
+.lf-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lf-card-title {
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  color: #1f2621;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.lf-card-desc {
+  font-size: clamp(0.875rem, 1.35vw, 0.98rem);
+  color: #535d56;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Card Action Button */
+.lf-card-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.lf-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 7px 22px;
+  border-radius: 9px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.18s ease;
+}
+
+.lf-btn-lost {
+  border: 1.5px solid #f29b82;
+  color: #dd613c;
+}
+
+.lf-card:hover .lf-btn-lost,
+.lf-btn-lost:hover {
+  background: #dd613c;
+  color: #ffffff;
+  border-color: #dd613c;
+  box-shadow: 0 4px 14px rgba(221, 97, 60, 0.28);
+  transform: translateY(-1px);
+}
+
+.lf-btn-found {
+  border: 1.5px solid #8fc39e;
+  color: #dd613c;
+}
+
+.lf-card:hover .lf-btn-found,
+.lf-btn-found:hover {
+  background: #4a7c59;
+  color: #ffffff;
+  border-color: #4a7c59;
+  box-shadow: 0 4px 14px rgba(74, 124, 89, 0.28);
+  transform: translateY(-1px);
+}
+
+.lf-action-btn:active {
+  transform: translateY(1px);
+}
+
+/* ---- Tagline ---- */
+.tagline-strip {
+  background: var(--color-primary-tint);
+  border: 1px solid #c8dcc8;
+  border-radius: var(--radius-lg);
+  padding: 13px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 40px;
+  font-size: 0.9375rem;
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+/* ---- Section Headers ---- */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.section-count {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- Grid (Image 3 Style: 4 Columns with Uniform Card Sizing) ---- */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.items-grid-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1160px) {
+  .items-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 860px) {
+  .items-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ---- Search section ---- */
+.search-section {
+  margin-bottom: 32px;
+}
+
+.items-section {
+  margin-bottom: 48px;
+}
+
+/* ---- Public CTA section ---- */
+.public-cta-section {
+  padding: 16px 0 48px;
+}
+
+.public-cta-card {
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(28px, 5vw, 48px);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.public-cta-icon {
+  width: 68px;
+  height: 68px;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.public-cta-title {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.public-cta-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto 24px;
+}
+
+.public-cta-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.public-cta-note {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* ---- Mobile Responsiveness ---- */
+@media (max-width: 600px) {
+  .lost-found-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 24px 0 20px;
+  }
+
+  .lf-card {
+    padding: 14px 16px;
+    gap: 12px;
+    border-radius: 16px;
+  }
+
+  .lf-card-illustration {
+    width: 82px;
+    height: 82px;
+  }
+
+  .lf-card-body {
+    min-height: 82px;
+    gap: 10px;
+  }
+
+  .lf-card-title {
+    font-size: 1.1rem;
+  }
+
+  .lf-card-desc {
+    font-size: 0.8125rem;
+  }
+
+  .lf-action-btn {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .lf-card-illustration {
+    width: 70px;
+    height: 70px;
+  }
+
+  .lf-card-title {
+    font-size: 1rem;
+  }
+
+  .lf-card-desc {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+}

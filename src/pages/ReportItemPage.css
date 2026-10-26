@@ -1,0 +1,272 @@
+/* src/pages/ReportItemPage.css */
+
+.report-page {
+  min-height: 100vh;
+  padding-bottom: 72px;
+}
+
+.report-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.report-header {
+  margin-bottom: 24px;
+}
+
+.report-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 0;
+  margin-bottom: 16px;
+  transition: color var(--transition);
+}
+
+.report-back-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Dedicated Banner Cards for Lost & Found */
+.report-banner-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 26px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+}
+
+.report-banner-card.lost-banner {
+  background: linear-gradient(135deg, #fff7f5 0%, #feede9 100%);
+  border: 1.5px solid #f9ded7;
+}
+
+.report-banner-card.found-banner {
+  background: linear-gradient(135deg, #fffef6 0%, #fdf8e6 100%);
+  border: 1.5px solid #f3ebd0;
+}
+
+.report-banner-illustration {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-banner-text {
+  flex: 1;
+}
+
+.report-banner-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+.lost-badge {
+  background: #fde2db;
+  color: #c0392b;
+}
+
+.found-badge {
+  background: #eef3ee;
+  color: #2e7d32;
+}
+
+.report-title {
+  font-size: 1.625rem;
+  font-weight: 900;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.report-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Form card */
+.report-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .report-banner-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 18px;
+  }
+}
+
+/* Image upload */
+.image-upload-zone {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+  background: var(--color-bg-subtle);
+  text-align: center;
+}
+
+.image-upload-zone:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-tint);
+}
+
+.image-upload-icon {
+  color: var(--color-text-muted);
+}
+
+.image-upload-text {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.image-upload-sub {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.image-preview-wrap {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  background: #fbfbf9;
+  max-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.image-preview-thumb {
+  max-width: 100%;
+  max-height: 190px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.image-preview-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(30, 34, 32, 0.75);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: background var(--transition);
+}
+
+.image-preview-remove:hover {
+  background: rgba(192, 57, 43, 0.9);
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Confirmation */
+.report-confirmation {
+  text-align: center;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.confirmation-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lost-confirm-icon {
+  background: var(--color-status-lost-bg);
+  color: var(--color-status-lost);
+}
+
+.found-confirm-icon {
+  background: var(--color-status-recovered-bg);
+  color: var(--color-status-recovered);
+}
+
+.confirmation-title {
+  font-size: 1.625rem;
+  font-weight: 900;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.confirmation-message {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
+}
