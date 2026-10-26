@@ -78,14 +78,16 @@ async function start() {
   try {
     await connectDB()
     await seedInitialData()
-
-    httpServer.listen(PORT, () => {
-      console.log(`[UFind API] Server running on http://localhost:${PORT}`)
-    })
   } catch (error) {
-    console.error('[UFind API] Failed to start server:', error)
-    process.exit(1)
+    console.error('[UFind API] MongoDB connection failed:', error.message)
+    console.error('[UFind API] Server will start but database features will not work.')
+    console.error('[UFind API] MONGODB_URI set:', !!process.env.MONGODB_URI)
+    console.error('[UFind API] MONGODB_URI value:', process.env.MONGODB_URI ? process.env.MONGODB_URI.substring(0, 40) + '...' : 'UNDEFINED')
   }
+
+  httpServer.listen(PORT, () => {
+    console.log(`[UFind API] Server running on http://localhost:${PORT}`)
+  })
 }
 
 start()
